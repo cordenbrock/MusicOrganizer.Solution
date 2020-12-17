@@ -6,8 +6,13 @@ using System;
 namespace MusicOrganizer.Tests
 {
   [TestClass]
-  public class AlbumTest
+  public class AlbumTest : IDisposable
   {
+    
+    public void Dispose()
+    {
+      Album.ClearAll();
+    }
     
     [TestMethod]
     public void AlbumConstructor_CreatesInstanceOfAlbum_Album()
@@ -28,13 +33,25 @@ namespace MusicOrganizer.Tests
     }
 
     [TestMethod]
-    public void SetTitle_ReturnsTitle_String()
+    public void SetTitle_SetsTitle_String()
     {
       string newTitle = "self-titled";
       Album testAlbum = new Album(newTitle);
       string updatedTitle = "Alanis Morisette";
       testAlbum.Title = updatedTitle;
       Assert.AreEqual("Alanis Morisette", testAlbum.Title);
+    }
+
+    [TestMethod]
+    public void GetAll_ReturnsList_List()
+    {
+      Album newAlbum1 = new Album("Album 1");
+      Album newAlbum2 = new Album("Album 2");
+      List<Album> newList = new List<Album> { newAlbum1, newAlbum2 };
+
+      List<Album> result = Album.GetAll();
+
+      CollectionAssert.AreEqual(newList, result);
     }
   }
 }
