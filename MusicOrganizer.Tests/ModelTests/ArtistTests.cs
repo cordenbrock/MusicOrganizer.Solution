@@ -15,5 +15,16 @@ namespace MusicOrganizer.Tests // : IDisposable
       Assert.AreEqual(typeof(Artist), newArtist.GetType());
     }
 
+    [TestMethod]
+    public void GetName_ReturnsArtistName_String()
+    {
+      string artistName = "Benny Goodman";
+      Artist newArtist = new Artist(artistName);
+
+      string result = newArtist.Name;
+
+      Assert.AreEqual(artistName, result);
+    }
+
   }
 }
