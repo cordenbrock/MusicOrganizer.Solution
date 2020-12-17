@@ -15,5 +15,16 @@ namespace MusicOrganizer.Tests
       Album newAlbum = new Album("test title");
       Assert.AreEqual(typeof(Album), newAlbum.GetType());
     }
+
+    [TestMethod]
+    public void GetTitle_ReturnsTitle_String()
+    {
+      string title = "Ziggy Stardust";
+
+      Album newAlbum = new Album(title);
+      string result = newAlbum.Title;
+
+      Assert.AreEqual(title, result);
+    }
   }
 }
