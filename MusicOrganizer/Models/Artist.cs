@@ -11,8 +11,8 @@ namespace MusicOrganizer.Models
 
     public Artist(string artistName)
     {
-      Name = artistName + " wrong";
-      
+      Name = artistName;
+
     }
   }
 }
