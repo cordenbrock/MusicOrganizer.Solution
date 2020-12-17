@@ -64,5 +64,17 @@ namespace MusicOrganizer.Tests
 
       Assert.AreEqual(1, result);
     }
+
+    [TestMethod]
+    public void FindAlbum_ReturnsAlbumInstanceMathcedById_Album()
+    {
+      string newTitle01 = "Jupiter";
+      string newTitle02 = "Mars";
+      Album newAlbum01 = new Album(newTitle01);
+      Album newAlbum02 = new Album(newTitle02);
+      Album result = Album.Find(2);
+      Console.WriteLine("{0}, {1}, {2}", newAlbum01.Id, newAlbum02.Id, result.Id);
+      Assert.AreEqual(newAlbum02, result);
+    }
   }
 }
