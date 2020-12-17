@@ -12,7 +12,7 @@ namespace MusicOrganizer.Models
     {
       Title = albumTitle;
       _instances.Add(this);
-      Id = 46;
+      Id = _instances.Count;
     }
 
     public static List<Album> GetAll()
