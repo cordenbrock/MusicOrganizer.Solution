@@ -26,5 +26,15 @@ namespace MusicOrganizer.Tests
 
       Assert.AreEqual(title, result);
     }
+
+    [TestMethod]
+    public void SetTitle_ReturnsTitle_String()
+    {
+      string newTitle = "self-titled";
+      Album testAlbum = new Album(newTitle);
+      string updatedTitle = "Alanis Morisette";
+      testAlbum.Title = updatedTitle;
+      Assert.AreEqual("Alanis Morisette", testAlbum.Title);
+    }
   }
 }
