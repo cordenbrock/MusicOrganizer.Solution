@@ -66,7 +66,7 @@ namespace MusicOrganizer.Tests
     }
 
     [TestMethod]
-    public void FindAlbum_ReturnsAlbumInstanceMathcedById_Album()
+    public void FindAlbum_ReturnsAlbumInstanceMatchedById_Album()
     {
       string newTitle01 = "Jupiter";
       string newTitle02 = "Mars";

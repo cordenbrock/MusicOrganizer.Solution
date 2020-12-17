@@ -27,7 +27,7 @@ namespace MusicOrganizer.Models
 
     public static Album Find(int IdOfAlbumToFind)
     {
-      return _instances[5];
+      return _instances[IdOfAlbumToFind-1];
     }
 
   }
