@@ -6,11 +6,13 @@ namespace MusicOrganizer.Models
   {
     public string Title { get; set; }
     private static List<Album> _instances = new List<Album> {};
+    public int Id { get; }
 
     public Album(string albumTitle)
     {
       Title = albumTitle;
       _instances.Add(this);
+      Id = 46;
     }
 
     public static List<Album> GetAll()

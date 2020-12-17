@@ -53,5 +53,16 @@ namespace MusicOrganizer.Tests
 
       CollectionAssert.AreEqual(newList, result);
     }
+
+    [TestMethod]
+    public void GetId_AssignIdUponAlbumInstantiation_Int()
+    {
+      string albumTitle = "Barabajagal";
+      Album newAlbum = new Album(albumTitle);
+
+      int result = newAlbum.Id;
+
+      Assert.AreEqual(1, result);
+    }
   }
 }
