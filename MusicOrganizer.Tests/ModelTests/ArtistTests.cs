@@ -36,5 +36,17 @@ namespace MusicOrganizer.Tests // : IDisposable
       Assert.AreEqual("Kenny Rogers", firstArtist.Name);
     }
 
+    [TestMethod]
+    public void GetAll_ReturnsList_List()
+    {
+      Artist artistOne = new Artist("Lead Belly");
+      Artist artistTwo = new Artist("Skip James");
+      List<Artist> newList = new List<Artist> { artistOne, artistTwo };
+
+      List<Artist> result = Artist.GetAll();
+
+      CollectionAssert.AreEqual(newList, result);
+    }
+
   }
 }

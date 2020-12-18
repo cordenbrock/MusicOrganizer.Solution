@@ -12,7 +12,14 @@ namespace MusicOrganizer.Models
     public Artist(string artistName)
     {
       Name = artistName;
+      _instances.Add(this);
+    }
 
+    public static List<Artist> GetAll()
+    {
+      List<Artist> emptyList = new List<Artist> {};
+      return emptyList;
+      // return _instances;
     }
   }
 }
