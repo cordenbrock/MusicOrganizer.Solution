@@ -3,11 +3,17 @@ using MusicOrganizer.Models;
 using System.Collections.Generic;
 using System;
 
-namespace MusicOrganizer.Tests // : IDisposable
+namespace MusicOrganizer.Tests
 {
   [TestClass]
-  public class ArtistTest
+  public class ArtistTests : IDisposable
   {
+    
+    public void Dispose()
+    {
+      Artist.ClearAll();
+    }
+
     [TestMethod]
     public void ArtistConstructor_CreatesInstanceOfArtist_Artist()
     {

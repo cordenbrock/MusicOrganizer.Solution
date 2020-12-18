@@ -17,9 +17,12 @@ namespace MusicOrganizer.Models
 
     public static List<Artist> GetAll()
     {
-      List<Artist> emptyList = new List<Artist> {};
-      return emptyList;
-      // return _instances;
+      return _instances;
+    }
+
+    public static void ClearAll()
+    {
+      _instances.Clear();
     }
   }
 }
