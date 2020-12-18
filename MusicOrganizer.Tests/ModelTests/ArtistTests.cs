@@ -26,5 +26,15 @@ namespace MusicOrganizer.Tests // : IDisposable
       Assert.AreEqual(artistName, result);
     }
 
+    [TestMethod]
+    public void SetName_SetsArtistNameOnInstance_String()
+    {
+      string artistNameOriginal = "Kenny Loggins";
+      string artistTwo = "Kenny Rogers";
+      Artist firstArtist = new Artist(artistNameOriginal);
+      firstArtist.Name = artistTwo;
+      Assert.AreEqual("Kenny Rogers", firstArtist.Name);
+    }
+
   }
 }
